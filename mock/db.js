@@ -9,9 +9,10 @@ let mapData = (n) => {
     data.push({
       _id: i+'',
       id: i+'',
-      title:'@ctitle(8,12)',
-      des:'@ctitle(10,20)',
+      title:'@ctitle(2,6)',
+      des:'@ctitle(20,30)',
       time:'@integer(1594004307038,1598004307038)',
+	  img:Mock.Random.image('80x120',Mock.Random.color(),Mock.Random.cword(1)),
       detail:{
         auth_icon:Mock.Random.image('50x50',Mock.Random.color(),Mock.Random.cword(1)),
         auth:'@cname()',
@@ -36,10 +37,13 @@ let mapData2 = (n) => {
       sub_title:'@ctitle(6,12)',
       banner: Mock.Random.image('1680x745',Mock.Random.color(),Mock.Random.cword(4,8)),
       time:'@integer(1594004307038,1598004307038)',
+	  img:Mock.Random.image('80x120',Mock.Random.color(),Mock.Random.cword(1)),
       detail:{
         auth_icon:Mock.Random.image('50x50',Mock.Random.color(),Mock.Random.cword(1)),
         auth:'@cname()',
-        content:'@cparagraph(3)'
+        content: [1,2,3].map(()=>(
+          "<p style='margin-top: 20px;text-indent: 2em'>"+"@cparagraph(10,15)"+"</p>"
+        )).join('')
       }
     })
   }
